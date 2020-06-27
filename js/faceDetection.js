@@ -56,19 +56,19 @@ function openCvReady(option) {
         let original_size_of_face = null
 
         if (option == 1){
-            original_size_of_face = 10
+            original_size_of_face = 3.94
         }
 
         if (option == 2){
-            original_size_of_face = 15
+            original_size_of_face = 5.91
         }
 
         if (option == 3){
-            original_size_of_face = 18
+            original_size_of_face = 7.08
         }
 
         if (option == 4){
-            original_size_of_face = 21.59
+            original_size_of_face = 8.5
         }
 
         for (let i = 0; i < faces.size(); ++i) {
@@ -79,8 +79,8 @@ function openCvReady(option) {
             let min_distance = (original_size_of_face * min_focal_length) / face.width
             let approx_distance = (original_size_of_face * approx_focal_length) / face.width
             let max_distance = (original_size_of_face * max_focal_length) / face.width
-            document.getElementById("distance").innerHTML = approx_distance.toFixed(2) + ' cm'
-            document.getElementById("range").innerHTML = min_distance.toFixed(2) + ' cm and ' + max_distance.toFixed(2) + ' cm'
+            document.getElementById("distance").innerHTML = approx_distance.toFixed(2) + ' inch'
+            document.getElementById("range").innerHTML = min_distance.toFixed(2) + ' inch and ' + max_distance.toFixed(2) + ' inch'
         }
 
         cv.imshow("canvas_output", dst);
