@@ -8,6 +8,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
         <script src="js/utils.js"></script>
         <script src="js/faceDetection.js" type="text/JavaScript"></script>
         <script src="js/opencv.js"></script>
@@ -26,9 +27,9 @@
 
     <div style="margin-left: 24%; margin-right: 10px; display: block;">
         <form  class="form-inline col-md-5">
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref"><strong>Please select your age</strong> </label>
+                <label class="my-1 mr-2" for="form-select"><strong>Please select your age</strong> </label>
                 <p style="color: red"><strong>Note : </strong>You won't be able to change age after you start test </p>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <select class="custom-select my-1 mr-sm-2" id="form-select">
                     <option value="1" disabled>05-10 years</option>
                     <option value="2" disabled>11-15 years</option>
                     <option value="3" disabled>16-20 years</option>
@@ -38,7 +39,7 @@
         </form>
 
         <div style="margin-left: 15px; margin-right: auto; display: block;">
-            <button id="test_start" class="btn btn-primary my-1" onclick="testStart()">Start Test</button>
+            <button id="test-start-button" class="btn btn-primary my-1" onclick="testStart()">Start Test</button>
         </div>
 
     </div>
@@ -51,11 +52,11 @@
         <canvas id="canvas_output"></canvas>
     </div>
 
-    <div id="h4_range" style="margin-left: auto; margin-right: auto; margin-top: 10px; display: none; width: 40%; ">
+    <div id="face-range" style="margin-left: auto; margin-right: auto; margin-top: 10px; display: none; width: 40%; ">
         <h5> Face distance is between  <strong id="range" style="color: green">0 inch and 0 inch</strong> </h5>
     </div>
 
-    <div id="h3_approx" style="margin-left: auto; margin-right: auto; display: none; width: 40%; ">
+    <div id="face-approx" style="margin-left: auto; margin-right: auto; display: none; width: 40%; ">
         <h3>Approximate Distance is <strong id="distance" style="color: green">0 inch</strong> </h3>
     </div>
 
@@ -65,7 +66,6 @@
 
     <br></br>
     <h1></h1>
-
 
     </body>
 </html>
