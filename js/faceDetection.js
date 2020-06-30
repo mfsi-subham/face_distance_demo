@@ -26,12 +26,12 @@ function openCvReady(option) {
 
     let src = new cv.Mat(video.height, video.width, cv.CV_8UC4); // source of video from video tag
     let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);// destination of processed video to canvas
-    let gray = new cv.Mat(); 
+    let gray = new cv.Mat(); // object to convert image to grayscale
     let cap = new cv.VideoCapture(cam_input); // capturing the video
-    let faces = new cv.RectVector();
-    let classifier = new cv.CascadeClassifier();
-    let utils = new Utils('errorMessage');
-    let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
+    let faces = new cv.RectVector(); // object to get face dimensions
+    let classifier = new cv.CascadeClassifier(); // classifier object
+    let utils = new Utils('errorMessage'); // utlity to load xml file and display errors
+    let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml . for demo it is kept in same folder
 
     utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
         classifier.load(faceCascadeFile); 
@@ -95,6 +95,7 @@ function openCvReady(option) {
                 approx_distance is with focal_length = 0.85 * width_of_frame
                 max_distance is with focal_length = 0.95 * width_of_frame
             */
+
             let min_distance = (original_size_of_face * min_focal_length) / face.width 
             let approx_distance = (original_size_of_face * approx_focal_length) / face.width
             let max_distance = (original_size_of_face * max_focal_length) / face.width
@@ -105,11 +106,7 @@ function openCvReady(option) {
         }
 
         cv.imshow("canvas_output", dst); // displaying processed camera frame in a canvas
-
-        
         setTimeout(processVideo); // schedule next time onwards for processing each frame
     }
-    
     setTimeout(processVideo); // schedule first time for starting the process.
-
 }
