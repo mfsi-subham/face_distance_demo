@@ -3,12 +3,12 @@
     border-left: 6px solid #f44336;
     margin-bottom: 15px;
     margin-top: 10px;
-    padding: 4px 12px;
-    text-align: center;
+    padding: 4px 6px;
+    text-align: left;
 }
 
 #note-1-p{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #note-2{
@@ -16,17 +16,17 @@
     border-left: 6px solid #f44336;
     margin-bottom: 15px;
     margin-top: 10px;
-    padding: 4px 12px;
-    text-align: center;
+    padding: 4px 6px;
+    text-align: left;
 }
 
 #note-2-p{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #age-form {
-    margin-left: 24%;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 }
 
@@ -42,32 +42,32 @@
 }
 
 #canvas {
-    margin-left: auto;
+    margin-left: 12%;
     margin-right: auto;
     display: block;
-    width: 50%;
+    margin-top: 10px;
 }
 
 #face-range {
-    margin-left: auto;
+    margin-left: 27%;
     margin-right: auto;
     margin-top: 10px;
     display: none;
-    width: 40%;
+    width: 70%;
 }
 
 #face-approx {
-    margin-left: auto;
+    margin-left: 27%;
     margin-right: auto;
     display: none;
-    width: 40%;
+    width: 70%;
 }
 
 #retest {
     margin-left: auto;
     margin-right: auto;
     display: none;
-    width: 20%;
+    width: 10%;
 }
 
 #range {

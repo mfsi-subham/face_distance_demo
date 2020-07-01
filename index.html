@@ -11,59 +11,70 @@
         <link rel="stylesheet" href="index.css">
         <script src="js/utils.js"></script>
         <script src="js/faceDetection.js" type="text/JavaScript"></script>
-        <script src="js/opencv.js"></script>
-
-        
+        <script src="js/opencv.js"></script>   
     </head>
 
     <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
 
-        <div id="note-1">
-            <p id="note-1-p">Please remove accessories form your face ex: <strong> face mask or glasses </strong>etc </p>
-        </div>
+                    <div id="note-1">
+                       <p id="note-1-p">Please remove accessories form your face ex: <strong> face mask or glasses </strong></p>
+                   </div>
+   
+                   <div id="note-2">
+                       <p id="note-2-p">Please do not have any lights behind you ex: <strong>direct sunlight or light bulb </strong></p>
+                   </div>
+   
+                   <div id="age-form">
+                       <form  class="form-inline col-md-8">
+                           <label class="my-1 mr-2" for="form-select"><strong>Please select your age</strong> </label>
+                           <p style="color: red"><strong>Note : </strong>You won't be able to change age after you start test </p>
+                           <select class="custom-select my-1 mr-sm-2" id="form-select">
+                               <option value="1" disabled>05-10 years</option>
+                               <option value="2" disabled>11-15 years</option>
+                               <option value="3" disabled>16-20 years</option>
+                               <option value="4" selected>21 or more</option>
+                           </select>
+   
+                       </form>
+   
+                       <div id="start-button">
+                           <button id="test-start-button" class="btn btn-primary" onclick="testStart()">Start Test</button>
+                       </div>
+   
+                   </div>
 
-        <div id="note-2">
-            <p id="note-2-p">Please do not have any lights behind you ex: <strong>direct sunlight or light bulb </strong>etc </p>
-        </div>
+                </div>
 
-        <div id="age-form">
-            <form  class="form-inline col-md-5">
-                    <label class="my-1 mr-2" for="form-select"><strong>Please select your age</strong> </label>
-                    <p style="color: red"><strong>Note : </strong>You won't be able to change age after you start test </p>
-                    <select class="custom-select my-1 mr-sm-2" id="form-select">
-                        <option value="1" disabled>05-10 years</option>
-                        <option value="2" disabled>11-15 years</option>
-                        <option value="3" disabled>16-20 years</option>
-                        <option value="4" selected>21 or more</option>
-                    </select>
+                <div class="col-md-7">
 
-            </form>
+                    <div>
+                        <video id="cam_input" height="480" width="640"></video>
+                    </div>
+    
+                    <div id="canvas">
+                        <canvas id="canvas_output"></canvas>
+                    </div>
+    
+                    <div id="face-range">
+                        <h5> Face distance is between  <strong id="range">0 inch and 0 inch</strong> </h5>
+                    </div>
+    
+                    <div id="face-approx">
+                        <h3>Approximate Distance is <strong id="distance">0 inch</strong> </h3>
+                    </div>
+    
+                    <div id="retest">
+                        <button class="btn btn-primary my-1" onClick="window.location.reload()">Take test again</button>
+                    </div>
+    
+                </div>
 
-            <div id="start-button">
-                <button id="test-start-button" class="btn btn-primary my-1" onclick="testStart()">Start Test</button>
             </div>
-
+ 
         </div>
 
-        <div>
-            <video id="cam_input" height="480" width="640"></video>
-        </div>
-
-        <div id="canvas">
-            <canvas id="canvas_output"></canvas>
-        </div>
-
-        <div id="face-range">
-            <h5> Face distance is between  <strong id="range">0 inch and 0 inch</strong> </h5>
-        </div>
-
-        <div id="face-approx">
-            <h3>Approximate Distance is <strong id="distance">0 inch</strong> </h3>
-        </div>
-
-        <div id="retest">
-            <button class="btn btn-primary my-1" onClick="window.location.reload()">Take test again</button>
-        </div>
-        <br></br>
     </body>
 </html>
